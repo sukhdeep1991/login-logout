@@ -1,0 +1,39 @@
+<div class="blockquote text-center mt-1">
+    <h1>Login!</h1>
+</div>
+<div class="mt-2 m-auto col-xl-3 col-lg-4 col-md-6 col-sm-8 col-10">
+    <form name="loginForm" ng-submit="$ctrl.doLogin(loginForm)" novalidate="">
+        <div class="form-group">
+            <label for="username">Username <span class="text-danger">*</span></label>
+            <input name="username" class="form-control" type="text" placeholder="Enter Username" 
+            required="" ng-model="$ctrl.loginDetails.username" 
+            autofocus="{{$ctrl.loginDetails.loginInProgress === false}}" 
+            ng-disabled="$ctrl.loginDetails.loginInProgress"
+            ng-pattern="$ctrl.regex">
+            <div class="error-popover" ng-if="loginForm.$submitted && loginForm.username.$invalid">
+                <div class="arrow"></div>
+                <span>Please enter a valid username, [\\ / , . ^] are not allowed.</span>
+            </div>
+        </div>
+        <div class="">
+            <label for="password">Password <span class="text-danger">*</span></label>
+            <input name="password" class="form-control" type="password" placeholder="Enter Password" 
+            required="" ng-model="$ctrl.loginDetails.password" 
+            ng-disabled="$ctrl.loginDetails.loginInProgress"
+            ng-pattern="$ctrl.regex">
+            <div class="error-popover" ng-if="loginForm.$submitted && loginForm.password.$invalid">
+                <div class="arrow"></div>
+                <span>Please enter a valid password, [\\ / , . ^] are not allowed.</span>
+            </div>
+        </div>
+        <span class="d-inline-block text-danger mt-1 mb-1"  
+        ng-bind="$ctrl.loginDetails.errorMessage"></span>
+        <div class="text-center">
+            <a ui-sref="welcome" class="btn btn-secondary btn-lg" role="button" aria-pressed="true"
+                ng-class="{'disabled': $ctrl.loginDetails.loginInProgress}">Cancel</a>
+            <button type="submit" class="btn btn-primary btn-lg" role="button" aria-pressed="true"
+                ng-class="{'disabled': $ctrl.loginDetails.loginInProgress}">Submit
+                <img class="svg-loader" ng-show="$ctrl.loginDetails.loginInProgress" src="./resources/images/oval.svg"></button>
+        </div>
+    </form>
+</div>

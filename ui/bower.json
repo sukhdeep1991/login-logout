@@ -1,0 +1,31 @@
+{
+  "name": "login-logout",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Sukhdeep Singh <sukhdeep.singh@nagarro.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "login",
+    "logout",
+    "welcome"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-cookies": "^1.6.9",
+    "angular-animate": "^1.6.9",
+    "angular-ui-router": "^1.0.15",
+    "jquery": "^3.3.1",
+    "bootstrap": "^4.0.0"
+  }
+}

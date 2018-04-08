@@ -1,0 +1,9 @@
+<div class="blockquote text-center mt-4">
+    <h1>Logged in as {{$ctrl.loggedInUsername}}!</h1>
+</div>
+<div class="text-center mt-5">
+    <button class="btn btn-primary btn-lg" role="button" aria-pressed="true" ng-click="$ctrl.doLogout()"
+    ng-disabled="$ctrl.logoutInProgress">Logout
+        <img class="svg-loader" ng-show="$ctrl.logoutInProgress" src="./resources/images/oval.svg">
+    </button>
+</div>
